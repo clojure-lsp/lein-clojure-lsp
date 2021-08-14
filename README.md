@@ -1,13 +1,13 @@
 # lein-clojure-lsp
 
-A Leiningen plugin to call clojure-lsp features using its API.
+A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/) features API.
 
 ## Installation
 
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[lein-clojure-lsp "0.1.0"]]
+:plugins [[com.github.clojure-lsp/lein-clojure-lsp "0.1.0"]]
 ```
 
 ## Usage
