@@ -10,11 +10,11 @@
                  "format" (lsp/format! options)
                  "rename" (lsp/rename! options)
                  (lein-core/abort "Unknown clojure-lsp command:" command))]
-    (when (:result-code result)
+    (when (not= 0 (:result-code result))
       (System/exit (:result-code result)))))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
-(defn clojure-lsp
+(defn ^:no-project-needed clojure-lsp
   "Access clojure-lsp API features"
   [project command & [options]]
   (let [options (merge {}
