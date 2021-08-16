@@ -19,4 +19,4 @@ deploy:
 %:
 	@:
 
-.PHONY: tag
+.PHONY: tag deploy
