@@ -5,4 +5,4 @@
             :url "https://opensource.org/licenses/MIT"}
   :eval-in-leiningen true
   :pedantic? :warn
-  :dependencies [[com.github.clojure-lsp/clojure-lsp "2021.08.16-14.47.54"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp "2021.08.16-19.02.30"]])
