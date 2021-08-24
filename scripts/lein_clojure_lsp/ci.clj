@@ -18,6 +18,9 @@
 (defn ^:private replace-tag [tag]
   (replace-in-file "project.clj"
                    #"com.github.clojure-lsp/lein-clojure-lsp \"[0-9]+.[0-9]+.[0-9]+.*\""
+                   (format "com.github.clojure-lsp/lein-clojure-lsp \"%s\"" tag))
+  (replace-in-file "README.md"
+                   #"com.github.clojure-lsp/lein-clojure-lsp \"[0-9]+.[0-9]+.[0-9]+.*\""
                    (format "com.github.clojure-lsp/lein-clojure-lsp \"%s\"" tag)))
 
 (defn ^:private get-patched-tag []
