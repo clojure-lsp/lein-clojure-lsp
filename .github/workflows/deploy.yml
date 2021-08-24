@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - "!*"
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  deploy-clojars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Leiningen
+        uses: DeLaGuardo/setup-clojure@3.5
+        with:
+          lein: 2.9.1
+
+      - name: Generate pom.xml
+        run: lein install
+
+      - uses: jlesquembre/clojars-publish-action@0.4
+        env:
+          USE_GIT_REF: false
+          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+          CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
