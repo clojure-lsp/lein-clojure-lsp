@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/com.github.clojure-lsp/lein-clojure-lsp.svg)](https://clojars.org/com.github.clojure-lsp/lein-clojure-lsp)
+
 # lein-clojure-lsp
 
 A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/) features API.
