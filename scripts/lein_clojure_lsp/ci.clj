@@ -1,6 +1,6 @@
 (ns lein-clojure-lsp.ci
   (:require
-   ;; [babashka.tasks :refer [shell]]
+   [babashka.tasks :refer [shell]]
    [clojure.string :as string]))
 
 (defn ^:private replace-in-file [file regex content]
@@ -26,8 +26,6 @@
             last
             (string/split #"\."))]
     (str major "." minor "." (inc (Integer/parseInt patch)))))
-
-(def shell println)
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn tag [& [tag]]
