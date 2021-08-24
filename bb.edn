@@ -1,0 +1,4 @@
+{:paths ["scripts"]
+ :tasks {tag lein-clojure-lsp.ci/tag
+         tag-patch-for-version lein-clojure-lsp.ci/tag-patch-for-version
+         deploy lein-clojure-lsp.ci/deploy}}
