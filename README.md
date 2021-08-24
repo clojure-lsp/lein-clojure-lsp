@@ -7,7 +7,7 @@ A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.github.io/clojure-ls
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[com.github.clojure-lsp/lein-clojure-lsp "0.1.0"]]
+:plugins [[com.github.clojure-lsp/lein-clojure-lsp "0.1.2"]]
 ```
 
 ## Usage
