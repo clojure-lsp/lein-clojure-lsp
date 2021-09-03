@@ -2,7 +2,7 @@
 
 # lein-clojure-lsp
 
-A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.github.io/clojure-lsp/) features API.
+A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.io/) features API.
 
 ## Installation
 
@@ -16,7 +16,7 @@ Add the plugin to your `project.clj`:
 
 This plugin accepts the following pattern `clojure-lsp <command> "<options-as-edn>"`.
 
-For more information on all available commands and options, Check the [API documentation](https://clojure-lsp.github.io/clojure-lsp/api/).
+For more information on all available commands and options, Check the [API documentation](https://clojure-lsp.io/api/).
 
 ### lein CLI
 
