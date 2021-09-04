@@ -6,6 +6,8 @@
 
 (defn run! [command-and-options options]
   (let [result (apply lsp/run! (concat command-and-options ["--settings" (str options)]))]
+    (when-let [message (:message result)]
+      (println message))
     (when (not= 0 (:result-code result))
       (System/exit (:result-code result)))))
 
