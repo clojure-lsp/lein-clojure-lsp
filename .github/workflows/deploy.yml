@@ -2,10 +2,10 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - "!*"
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+*'
+    # branches:
+    #   - "!*"
+    # tags:
+    #   - '[0-9]+.[0-9]+.[0-9]+*'
 
 jobs:
   deploy-clojars:
@@ -21,8 +21,11 @@ jobs:
       - name: Generate pom.xml
         run: lein install
 
-      - uses: jlesquembre/clojars-publish-action@0.4
-        env:
-          USE_GIT_REF: false
-          CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
-          CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+      - name: print
+        run: cat pom.xml
+
+      # - uses: jlesquembre/clojars-publish-action@0.4
+      #   env:
+      #     USE_GIT_REF: false
+      #     CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+      #     CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
