@@ -36,7 +36,7 @@
   (shell "git pull origin HEAD")
   (replace-tag tag)
   (add-changelog-entry tag nil)
-  (shell "git add project.clj CHANGELOG.md")
+  (shell "git add project.clj README.md CHANGELOG.md")
   (shell (format "git commit -m \"Release: %s\"" tag))
   (shell (str "git tag " tag))
   (shell "git push origin HEAD")
@@ -52,7 +52,7 @@
   (let [new-tag (get-patched-tag)]
     (replace-tag new-tag)
     (add-changelog-entry new-tag (str "Bump clojure-lsp to " version))
-    (shell "git add project.clj CHANGELOG.md")
+    (shell "git add project.clj README.md CHANGELOG.md")
     (shell (format "git commit -m \"Release: %s\"" new-tag))
     (shell (str "git tag " new-tag)))
   (shell "git push origin HEAD")
