@@ -14,14 +14,14 @@ Add the plugin to your `project.clj`:
 
 ## Usage
 
-This plugin accepts the following pattern `clojure-lsp <command> "<options-as-edn>"`.
+This plugin accepts the following pattern `clojure-lsp <command> "<options>"`.
 
 For more information on all available commands and options, Check the [API documentation](https://clojure-lsp.io/api/).
 
 ### lein CLI
 
 ``` bash
-$ lein clojure-lsp clean-ns
+$ lein clojure-lsp clean-ns --dry
 ```
 
 ### Aliases
@@ -31,8 +31,8 @@ You can configure your project.clj to add custom aliases to run specific clojure
 ```clojure
 ,,,
 :clojure-lsp {:settings {:clean {:ns-inner-blocks-indentation :same-line}}} ;; API options
-:aliases {"clean-ns" ["clojure-lsp" "clean-ns" "{:dry? true}"]   ;; check if namespaces are clean
-          "format" ["clojure-lsp" "format" "{:dry? true}"]       ;; check if namespaces are formatted
+:aliases {"clean-ns" ["clojure-lsp" "clean-ns" "--dry"]          ;; check if namespaces are clean
+          "format" ["clojure-lsp" "format" "--dry"]              ;; check if namespaces are formatted
           "lint" ["do" ["clean-ns"] ["format"]]                  ;; check both
 
           "clean-ns-fix" ["clojure-lsp" "clean-ns"]              ;; Fix namespaces not clean
