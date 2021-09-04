@@ -21,8 +21,8 @@ jobs:
       - name: Generate pom.xml
         run: lein install
 
-      - uses: jlesquembre/clojars-publish-action@0.4
+      - name: Deploy Clojars
         env:
-          USE_GIT_REF: false
           CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
           CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+        run: lein deploy clojars
