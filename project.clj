@@ -5,4 +5,8 @@
             :url "https://opensource.org/licenses/MIT"}
   :eval-in-leiningen true
   :pedantic? :warn
+  :deploy-repositories [["clojars" {:url           "https://clojars.org/repo"
+                                    :username      :env/clojars_username
+                                    :password      :env/clojars_password
+                                    :sign-releases false}]]
   :dependencies [[com.github.clojure-lsp/clojure-lsp "2021.09.04-17.11.44"]])
