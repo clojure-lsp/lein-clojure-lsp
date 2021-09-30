@@ -1,4 +1,4 @@
-(defproject com.github.clojure-lsp/lein-clojure-lsp "1.0.6"
+(defproject com.github.clojure-lsp/lein-clojure-lsp "1.0.7"
   :description "Lein plugin to run clojure-lsp features via API."
   :url "https://clojure-lsp.github.io/clojure-lsp"
   :license {:name "MIT"
@@ -9,4 +9,4 @@
                                     :username      :env/clojars_username
                                     :password      :env/clojars_password
                                     :sign-releases false}]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp "2021.09.30-12.28.16"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp "2021.09.30-15.28.01"]])
