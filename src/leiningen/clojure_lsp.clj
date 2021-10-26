@@ -9,7 +9,7 @@
     (when-let [message (:message result)]
       (println message))
     (when (not= 0 (:result-code result))
-      (System/exit (:result-code result)))))
+      (lein-core/exit (:result-code result) "clojure-lsp found issues"))))
 
 #_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn ^:no-project-needed clojure-lsp
