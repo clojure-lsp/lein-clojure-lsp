@@ -9,4 +9,4 @@
                                     :username      :env/clojars_username
                                     :password      :env/clojars_password
                                     :sign-releases false}]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp-standalone "2022.01.22-01.31.09-fix"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp-standalone "2022.02.23-12.12.12"]])
