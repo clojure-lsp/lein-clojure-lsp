@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.3.0
+
 - Bump clojure-lsp to 2022.04.18-00.59.32
 - Fix versions not being bumped since 1.2.5
 
