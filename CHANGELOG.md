@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.3
+
+- Fix java8 compatibility
+
 ## 1.3.2
 
 ## 1.3.1
