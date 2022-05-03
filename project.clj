@@ -1,4 +1,4 @@
-(defproject com.github.clojure-lsp/lein-clojure-lsp "1.3.4"
+(defproject com.github.clojure-lsp/lein-clojure-lsp "1.3.5"
   :description "Lein plugin to run clojure-lsp features via API."
   :url "https://clojure-lsp.github.io/clojure-lsp"
   :license {:name "MIT"
