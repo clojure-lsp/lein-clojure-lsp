@@ -33,7 +33,8 @@ You can configure your project.clj to add custom aliases to run specific clojure
 :clojure-lsp {:settings {:clean {:ns-inner-blocks-indentation :same-line}}} ;; API options
 :aliases {"clean-ns" ["clojure-lsp" "clean-ns" "--dry"]          ;; check if namespaces are clean
           "format" ["clojure-lsp" "format" "--dry"]              ;; check if namespaces are formatted
-          "lint" ["do" ["clean-ns"] ["format"]]                  ;; check both
+          "diagnostics" ["clojure-lsp" "diagnostics"]            ;; check if project has any diagnostics (clj-kondo findings)
+          "lint" ["do" ["clean-ns"] ["format"] ["diagnostics"]]  ;; check all above
 
           "clean-ns-fix" ["clojure-lsp" "clean-ns"]              ;; Fix namespaces not clean
           "format-fix" ["clojure-lsp" "format"]                  ;; Fix namespaces not formatted
