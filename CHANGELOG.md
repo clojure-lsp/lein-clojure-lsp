@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.7
+
+- Simple fix on auto-release to use correct clojure-lsp-standalone version
+
 ## 1.3.6
 
 - Bump clojure-lsp to 2022.05.23-13.18.11
