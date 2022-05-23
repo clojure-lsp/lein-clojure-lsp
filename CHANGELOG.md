@@ -4,6 +4,8 @@
 
 ## 1.3.7
 
+## 1.3.7
+
 - Simple fix on auto-release to use correct clojure-lsp-standalone version
 
 ## 1.3.6
