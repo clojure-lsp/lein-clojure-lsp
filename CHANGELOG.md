@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.12
+
+- Bump clojure-lsp to 2022.09.01-15.27.31
+
 ## 1.3.11
 
 - Bump clojure-lsp to 2022.07.24-18.25.43
