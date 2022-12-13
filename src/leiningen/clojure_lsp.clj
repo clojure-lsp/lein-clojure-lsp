@@ -6,8 +6,8 @@
 
 (defn run! [command-and-options options]
   (let [result (apply lsp/run! (concat command-and-options ["--settings" (str options)]))]
-    (when-let [message (:message result)]
-      (println message))
+    (when-let [message-fn (:message-fn result)]
+      (println (message-fn)))
     (when (not= 0 (:result-code result))
       (lein-core/exit (:result-code result) "clojure-lsp found issues"))))
 
