@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.18
+
+- Bump clojure-lsp to 2023.01.26-11.08.16
+
 - Use clojure-lsp-server jar which is not a uberjar, avoiding exceptions on client for version conflict.
 
 ## 1.3.17
