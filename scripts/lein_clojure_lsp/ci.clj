@@ -47,8 +47,8 @@
   (shell "git fetch origin")
   (shell "git pull origin HEAD")
   (replace-in-file "project.clj"
-                   #"com.github.clojure-lsp/clojure-lsp-standalone \".*\""
-                   (format "com.github.clojure-lsp/clojure-lsp-standalone \"%s\"" version))
+                   #"com.github.clojure-lsp/clojure-lsp-server \".*\""
+                   (format "com.github.clojure-lsp/clojure-lsp-server \"%s\"" version))
   (let [new-tag (get-patched-tag)]
     (replace-tag new-tag)
     (add-changelog-entry new-tag (str "Bump clojure-lsp to " version))
