@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Use clojure-lsp-server jar which is not a uberjar, avoiding exceptions on client for version conflict.
+
 ## 1.3.17
 
 - Fix messages prints not working
