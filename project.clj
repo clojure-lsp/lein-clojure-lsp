@@ -9,4 +9,4 @@
                                     :username      :env/clojars_username
                                     :password      :env/clojars_password
                                     :sign-releases false}]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2023.04.19-12.43.29"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2023.04.19-12.43.29-hotfix1"]])
