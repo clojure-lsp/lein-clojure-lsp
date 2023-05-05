@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.3.23
+
+- Bump clojure-lsp to 2023.05.04-19.38.01
+
 ## 1.3.22
 
 - Bump clojure-lsp to 2023.04.19-12.43.29-hotfix1 fixing memory issues
