@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Adds compatibility with pedantic. #7
+
 ## 1.3.25
 
 - Bump clojure-lsp to 2023.08.06-00.28.06
