@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.0
+
 - Adds compatibility with pedantic. #7
 
 ## 1.3.25
