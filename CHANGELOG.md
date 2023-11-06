@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.2
+
 - Bump clojure-lsp to 2023.10.30-16.25.41-hotfix1
 
 ## 1.4.1
