@@ -11,4 +11,4 @@
                                     :sign-releases false}]]
   :managed-dependencies [[com.fasterxml.jackson.core/jackson-core "2.15.2"]
                          [org.clojure/tools.cli "1.0.219"]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2023.10.30-16.25.41"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2023.10.30-16.25.41-hotfix1"]])
