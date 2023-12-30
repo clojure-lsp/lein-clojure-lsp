@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.4.3
+
+- Bump clojure-lsp to 2023.12.29-12.09.27
+
 ## 1.4.2
 
 - Bump clojure-lsp to 2023.10.30-16.25.41-hotfix1
