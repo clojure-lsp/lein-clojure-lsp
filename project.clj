@@ -1,4 +1,4 @@
-(defproject com.github.clojure-lsp/lein-clojure-lsp "1.4.3"
+(defproject com.github.clojure-lsp/lein-clojure-lsp "1.4.4"
   :description "Lein plugin to run clojure-lsp features via API."
   :url "https://clojure-lsp.github.io/clojure-lsp"
   :license {:name "MIT"
@@ -11,4 +11,4 @@
                                     :sign-releases false}]]
   :managed-dependencies [[com.fasterxml.jackson.core/jackson-core "2.15.2"]
                          [org.clojure/tools.cli "1.0.219"]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2023.12.29-12.09.27"]])
+  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2024.02.01-11.01.59"]])
