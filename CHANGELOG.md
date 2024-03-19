@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.7
+
 - Support overriding settings. #9
 
 ## 1.4.6
