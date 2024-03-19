@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Support overriding settings. #9
+
 ## 1.4.6
 
 - Bump clojure-lsp to 2024.03.13-13.11.00
