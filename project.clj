@@ -14,4 +14,8 @@
   :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2024.08.05-18.16.00" :exclusions [babashka/fs
                                                                                                cheshire
                                                                                                com.fasterxml.jackson.dataformat/jackson-dataformat-smile
-                                                                                               com.fasterxml.jackson.dataformat/jackson-dataformat-cbor]]])
+                                                                                               com.fasterxml.jackson.dataformat/jackson-dataformat-cbor]]
+                 [cheshire/cheshire "5.13.0"]
+                 [babashka/fs "0.5.21"]
+                 [com.fasterxml.jackson.dataformat/jackson-dataformat-smile "2.18.0"]
+                 [com.fasterxml.jackson.dataformat/jackson-dataformat-cbor "2.18.0"]])
