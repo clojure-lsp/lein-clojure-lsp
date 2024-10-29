@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.13
+
 ## 1.4.12
 
 - Bump jackson-core to 2.18.0.
