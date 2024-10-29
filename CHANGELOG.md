@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Bump jackson-core to 2.18.0.
+- Bump tools.cli to 1.1.230.
+
 ## 1.4.11
 
 - Bump clojure-lsp to 2024.08.05-18.16.00
