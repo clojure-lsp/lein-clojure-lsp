@@ -19,4 +19,5 @@
                  [cheshire/cheshire "5.13.0"]
                  [babashka/fs "0.5.21"]
                  [com.fasterxml.jackson.dataformat/jackson-dataformat-smile "2.18.0"]
-                 [com.fasterxml.jackson.dataformat/jackson-dataformat-cbor "2.18.0"]])
+                 [com.fasterxml.jackson.dataformat/jackson-dataformat-cbor "2.18.0"]
+                 [org.clojure/tools.reader "1.5.0"]])
