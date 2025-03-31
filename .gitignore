@@ -11,5 +11,7 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
-.lsp/sqlite.db
-.clj-kondo/.cache
+.lsp/*
+!.lsp/config.edn
+.clj-kondo/*
+!.clj-kondo/config.edn
