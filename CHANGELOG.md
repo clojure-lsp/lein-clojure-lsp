@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix --settings flag
+
 ## 1.4.21
 
 ## 1.4.20

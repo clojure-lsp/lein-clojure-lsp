@@ -20,11 +20,12 @@
 (defn args
   [command-and-options project-settings]
   (cond
-    (and (not-empty project-settings) (has-settings? command-and-options))
+    (and (not-empty project-settings)
+         (has-settings? command-and-options))
     (args-with-merged-settings command-and-options project-settings)
 
     (not-empty project-settings)
-    (concat command-and-options ["--settings" (str project-settings)])
+    (concat command-and-options ["--settings" (str (:settings project-settings))])
 
     :else
     command-and-options))
