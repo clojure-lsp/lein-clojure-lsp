@@ -9,21 +9,4 @@
                                     :username      :env/clojars_username
                                     :password      :env/clojars_password
                                     :sign-releases false}]]
-  :managed-dependencies [[com.fasterxml.jackson.core/jackson-core "2.18.0"]
-                         [org.clojure/tools.cli "1.1.230"]]
-  :dependencies [[com.github.clojure-lsp/clojure-lsp-server "2025.03.27-20.21.36" :exclusions [babashka/fs
-                                                                                               cheshire
-                                                                                               org.jetbrains.kotlin/kotlin-stdlib-jdk7
-                                                                                               com.fasterxml.jackson.dataformat/jackson-dataformat-smile
-                                                                                               com.fasterxml.jackson.dataformat/jackson-dataformat-cbor
-                                                                                               org.jetbrains.kotlin/kotlin-stdlib
-                                                                                               org.jetbrains.kotlin/kotlin-stdlib-jdk8
-                                                                                               org.jetbrains.kotlin/kotlin-stdlib-jdk7
-                                                                                               io.opentelemetry/opentelemetry-context
-                                                                                               io.opentelemetry/opentelemetry-api
-                                                                                               org.clojure/tools.reader]]
-                 [cheshire/cheshire "5.13.0"]
-                 [babashka/fs "0.5.21"]
-                 [com.fasterxml.jackson.dataformat/jackson-dataformat-smile "2.18.0"]
-                 [com.fasterxml.jackson.dataformat/jackson-dataformat-cbor "2.18.0"]
-                 [org.clojure/tools.reader "1.5.0"]])
+  :dependencies [[babashka/process "0.6.23"]])
