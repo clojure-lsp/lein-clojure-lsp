@@ -9,7 +9,7 @@ A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.io/) features API.
 Add the plugin to your `project.clj`:
 
 ```clojure
-:plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.4.20"]]
+:plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.4.21"]]
 ```
 
 ## Usage
