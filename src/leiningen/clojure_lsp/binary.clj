@@ -86,8 +86,10 @@
   (let [server-path (server-path)
         server-version (server-version)]
     (when-not (.exists server-path)
-      (println "Downloading and caching clojure-lsp...")
+      (binding [*out* *err*]
+        (println "Downloading and caching clojure-lsp..."))
       (let [t (System/currentTimeMillis)]
         (download! server-path server-version)
-        (println (format "Downloaded clojure-lsp took %sms" (- (System/currentTimeMillis) t)))))
+        (binding [*out* *err*]
+          (println (format "Downloaded clojure-lsp took %sms" (- (System/currentTimeMillis) t))))))
     (run-lsp! server-path args)))
