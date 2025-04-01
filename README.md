@@ -2,7 +2,7 @@
 
 # lein-clojure-lsp
 
-A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.io/) features API.
+A Leiningen plugin to use [clojure-lsp](https://clojure-lsp.io/) features API, it automatically downloads clojure-lsp native binary and runs with the provided args.
 
 ## Installation
 
