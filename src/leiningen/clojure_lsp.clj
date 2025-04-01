@@ -2,8 +2,8 @@
   (:refer-clojure :exclude [run!])
   (:require
    [clojure.edn :as edn]
-   [clojure-lsp.main :as lsp]
-   [leiningen.core.main :as lein-core]))
+   [leiningen.core.main :as lein-core]
+   [leiningen.clojure-lsp.binary :as lsp-binary]))
 
 (defn ^:private has-settings?
   [command-and-options]
@@ -20,24 +20,22 @@
 (defn args
   [command-and-options project-settings]
   (cond
-    (and (not-empty project-settings) (has-settings? command-and-options))
+    (and (not-empty project-settings)
+         (has-settings? command-and-options))
     (args-with-merged-settings command-and-options project-settings)
 
     (not-empty project-settings)
-    (concat command-and-options ["--settings" (str project-settings)])
+    (concat command-and-options ["--settings" (str (:settings project-settings))])
 
     :else
     command-and-options))
 
 (defn ^:private run!
   [command-and-options project-settings]
-  (let [result (apply lsp/run! (args command-and-options project-settings))]
-    (when-let [message-fn (:message-fn result)]
-      (println (message-fn)))
-    (when (not= 0 (:result-code result))
-      (lein-core/exit (:result-code result) "clojure-lsp found issues"))))
+  (let [{:keys [exit]} (lsp-binary/run! (args command-and-options project-settings))]
+    (when (not= 0 exit)
+      (lein-core/exit exit "clojure-lsp found issues"))))
 
-#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defn ^:no-project-needed clojure-lsp
   "Access clojure-lsp API features"
   [project & command-and-options]
