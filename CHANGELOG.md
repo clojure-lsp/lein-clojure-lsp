@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.0.0
+
 - Fix --settings flag
 - Replace clojure-lsp JVM with native binary for way better performance.
 
