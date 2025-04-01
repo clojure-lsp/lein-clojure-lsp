@@ -76,9 +76,10 @@
     (future
       (with-open [out-rdr ^BufferedReader (io/reader (:err p))]
         (loop []
-          (when-let [line (.readLine out-rdr)]
-            (println line)
-            (recur)))))
+          (binding [*out* *err*]
+            (when-let [line (.readLine out-rdr)]
+              (println line)
+              (recur))))))
     @p))
 
 (defn run! [args]
@@ -86,6 +87,7 @@
         server-version (server-version)]
     (when-not (.exists server-path)
       (println "Downloading and caching clojure-lsp...")
-      (download! server-path server-version)
-      (println "Downloaded clojure-lsp!"))
+      (let [t (System/currentTimeMillis)]
+        (download! server-path server-version)
+        (println (format "Downloaded clojure-lsp took %sms" (- (System/currentTimeMillis) t)))))
     (run-lsp! server-path args)))
