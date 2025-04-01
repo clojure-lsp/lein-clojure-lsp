@@ -69,18 +69,16 @@
   (let [p (process/process {:cmd (concat [(.getAbsolutePath path)] args)})]
     (future
       (with-open [out-rdr ^BufferedReader (io/reader (:out p))]
-        (loop [max 10]
+        (loop []
           (when-let [line (.readLine out-rdr)]
             (println line)
-            (when (pos? max)
-              (recur (dec max)))))))
+            (recur)))))
     (future
       (with-open [out-rdr ^BufferedReader (io/reader (:err p))]
-        (loop [max 10]
+        (loop []
           (when-let [line (.readLine out-rdr)]
             (println line)
-            (when (pos? max)
-              (recur (dec max)))))))
+            (recur)))))
     @p))
 
 (defn run! [args]
