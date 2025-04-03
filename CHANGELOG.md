@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix cached downloaded binary to check if downloaded version matches the current version in plugin.
+
 ## 2.0.0
 
 - Fix --settings flag
