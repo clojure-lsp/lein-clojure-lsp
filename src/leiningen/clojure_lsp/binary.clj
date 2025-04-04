@@ -87,8 +87,8 @@
     @p))
 
 (defn ^:private download-server? [server-path server-version-path version]
-  (or (not (.exists server-path))
-      (not= (slurp server-version-path) version)))
+  (not= version
+        (try (slurp server-version-path) (catch Exception _ :error-checking-local-version))))
 
 (defn run! [args]
   (let [server-path (server-path)
