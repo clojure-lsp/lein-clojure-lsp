@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.0.2
+
 - Fix download server file predicate to handle file not found scenarios.
 
 ## 2.0.1
