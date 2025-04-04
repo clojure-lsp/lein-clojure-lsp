@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix download server file predicate to handle file not found scenarios.
+
 ## 2.0.1
 
 - Fix cached downloaded binary to check if downloaded version matches the current version in plugin.
