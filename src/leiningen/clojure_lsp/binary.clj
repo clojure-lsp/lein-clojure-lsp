@@ -86,7 +86,7 @@
               (recur))))))
     @p))
 
-(defn ^:private download-server? [server-path server-version-path version]
+(defn ^:private download-server? [server-version-path version]
   (not= version
         (try (slurp server-version-path) (catch Exception _ :error-checking-local-version))))
 
@@ -94,7 +94,7 @@
   (let [server-path (server-path)
         server-version-path (server-version-path)
         server-version (server-version)]
-    (when (download-server? server-path server-version-path server-version)
+    (when (download-server? server-version-path server-version)
       (binding [*out* *err*]
         (println "Downloading and caching clojure-lsp to" (str server-path)))
       (let [t (System/currentTimeMillis)]
