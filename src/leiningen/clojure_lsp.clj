@@ -32,9 +32,7 @@
 
 (defn ^:private run!
   [command-and-options project-settings]
-  (let [{:keys [exit]} (lsp-binary/run! (args command-and-options project-settings))]
-    (when (not= 0 exit)
-      (lein-core/exit exit "clojure-lsp found issues"))))
+  (lsp-binary/run! (args command-and-options project-settings)))
 
 (defn ^:no-project-needed clojure-lsp
   "Access clojure-lsp API features"
