@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 2.0.3
+
+- Bump clojure-lsp to 2025.04.23-18.16.46
+
 ## 2.0.2
 
 - Fix download server file predicate to handle file not found scenarios.
