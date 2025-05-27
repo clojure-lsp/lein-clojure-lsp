@@ -70,20 +70,24 @@
   (io/file (global-cache-dir) "version.txt"))
 
 (defn ^:private run-lsp! [^File path args]
-  (let [p (process/process {:cmd (concat [(.getAbsolutePath path)] args)})]
-    (future
-      (with-open [out-rdr ^BufferedReader (io/reader (:out p))]
-        (loop []
-          (when-let [line (.readLine out-rdr)]
-            (println line)
-            (recur)))))
-    (future
-      (with-open [out-rdr ^BufferedReader (io/reader (:err p))]
-        (binding [*out* *err*]
-          (loop []
-            (when-let [line (.readLine out-rdr)]
-              (println line)
-              (recur))))))
+  (let [p (process/process {:cmd (concat [(.getAbsolutePath path)] args)})
+        out-fut (future
+                  (with-open [out-rdr ^BufferedReader (io/reader (:out p))]
+                    (loop []
+                      (when-let [line (.readLine out-rdr)]
+                        (println line)
+                        (flush)
+                        (recur)))))
+        err-fut (future
+                  (with-open [out-rdr ^BufferedReader (io/reader (:err p))]
+                    (binding [*out* *err*]
+                      (loop []
+                        (when-let [line (.readLine out-rdr)]
+                          (println line)
+                          (flush)
+                          (recur))))))]
+    @out-fut
+    @err-fut
     @p))
 
 (defn ^:private download-server? [server-path server-version-path version]
