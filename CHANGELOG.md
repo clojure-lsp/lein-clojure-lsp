@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.0.7
+
 - Fix print to stdout/err.
 
 ## 2.0.6
