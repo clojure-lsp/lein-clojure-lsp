@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 2.0.8
+
+- Bump clojure-lsp to 2025.06.06-19.04.49
+
 ## 2.0.7
 
 - Fix print to stdout/err.
