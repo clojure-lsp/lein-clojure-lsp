@@ -6,6 +6,7 @@
    [clojure.string :as string])
   (:import
    [java.io BufferedReader File]
+   [java.nio.file CopyOption Files StandardCopyOption]
    [java.util.zip ZipInputStream]))
 
 (set! *warn-on-reflection* true)
@@ -44,30 +45,42 @@
         (if (.isDirectory entry)
           (when-not (.exists dest-file)
             (.mkdirs dest-file))
-          (clojure.java.io/copy stream dest-file))
+          (io/copy stream dest-file))
         (recur (.getNextEntry stream))))))
+
+(defn ^:private install! [input ^File download-path]
+  (io/make-parents download-path)
+  (let [temp-path (File/createTempFile "clojure-lsp-" ".tmp" (.getParentFile download-path))]
+    (try
+      (unzip-file input temp-path)
+      (doto temp-path
+        (.setWritable true)
+        (.setReadable true)
+        (.setExecutable true))
+      (Files/move (.toPath temp-path)
+                  (.toPath download-path)
+                  (into-array CopyOption [StandardCopyOption/ATOMIC_MOVE
+                                          StandardCopyOption/REPLACE_EXISTING]))
+      (finally
+        (when (.exists temp-path)
+          (.delete temp-path))))))
 
 (defn ^:private download! [^File download-path ^File server-version-path version]
   (let [platform (os-name)
         arch (os-arch)
         artifact-name (get-in artifacts [platform arch])
         uri (format download-artifact-uri version artifact-name)]
-    (io/make-parents download-path)
-    (unzip-file (io/input-stream uri) download-path)
-    (doto download-path
-      (.setWritable true)
-      (.setReadable true)
-      (.setExecutable true))
+    (install! (io/input-stream uri) download-path)
     (spit server-version-path version)))
 
 (defn ^:private server-version []
   (string/trim (slurp (io/resource "CLOJURE_LSP_VERSION"))))
 
-(defn ^:private server-path ^File []
-  (io/file (global-cache-dir) "clojure-lsp"))
+(defn ^:private server-path ^File [version]
+  (io/file (global-cache-dir) version "clojure-lsp"))
 
-(defn ^:private server-version-path ^File []
-  (io/file (global-cache-dir) "version.txt"))
+(defn ^:private server-version-path ^File [version]
+  (io/file (global-cache-dir) version "version.txt"))
 
 (defn ^:private run-lsp! [^File path args]
   (let [p (process/process {:cmd (concat [(.getAbsolutePath path)] args)})
@@ -91,13 +104,14 @@
     @p))
 
 (defn ^:private download-server? [server-path server-version-path version]
-  (not= version
-        (try (slurp server-version-path) (catch Exception _ :error-checking-local-version))))
+  (or (not (.isFile ^File server-path))
+      (not= version
+            (try (slurp server-version-path) (catch Exception _ :error-checking-local-version)))))
 
 (defn run! [args]
-  (let [server-path (server-path)
-        server-version-path (server-version-path)
-        server-version (server-version)]
+  (let [server-version (server-version)
+        server-path (server-path server-version)
+        server-version-path (server-version-path server-version)]
     (when (download-server? server-path server-version-path server-version)
       (binding [*out* *err*]
         (println "Downloading and caching clojure-lsp to" (str server-path)))
