@@ -41,3 +41,7 @@ You can configure your project.clj to add custom aliases to run specific clojure
           "lint-fix" ["do" ["clean-ns-fix"] ["format-fix"]]}     ;; Fix both
 ,,,
 ```
+
+## Cache
+
+The plugin caches each clojure-lsp version separately under `$XDG_CACHE_HOME/lein-clojure-lsp/<version>`. If `XDG_CACHE_HOME` is not set, it uses `~/.cache`. Separate version directories allow projects using different plugin versions to run concurrently without replacing a binary that another process is executing.
